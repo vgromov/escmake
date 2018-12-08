@@ -2,9 +2,9 @@
 set(ESCOMMON_COMPILER_VERSION "" CACHE INTERNAL "")
 set(ESCOMMON_BIN_SUFFIX "" CACHE INTERNAL "")
 
-include(escompiler.defs.msvc.cmake)
-include(escompiler.defs.gnuc.cmake)
-include(escompiler.defs.emb.cmake)
+include(${PROJECT_BINARY_DIR}/escmake/escompiler.defs.msvc.cmake)
+include(${PROJECT_BINARY_DIR}/escmake/escompiler.defs.gnuc.cmake)
+include(${PROJECT_BINARY_DIR}/escmake/escompiler.defs.emb.cmake)
 
 # Check for compiler defs completion
 if(compilerVersion STREQUAL "")

@@ -1,7 +1,7 @@
 # Common linker configurations and defines
 message(
   STATUS
-  "Setting up C++ Runtime Linking"
+  "Setting up C++ Runtime Linking..."
 )
 
 if(MSVC)
