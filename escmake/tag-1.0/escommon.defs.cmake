@@ -14,8 +14,8 @@ set(ESI18N_DOMAINS "" CACHE INTERNAL "" FORCE)
 set(ESI18N_PO_PATTERN ".+[.]([a-z][a-z]_[A-Z][A-Z])[.]po" CACHE INTERNAL "" FORCE)
 
 # Linkage control internal global variables
-set(ES_BUILD_SHARED_LIBS ON CACHE BOOL INTERNAL "")
-set(ES_USE_DYNAMIC_RUNTIME ON CACHE BOOL INTERNAL "")
+set(ES_BUILD_SHARED_LIBS ON CACHE INTERNAL "")
+set(ES_USE_DYNAMIC_RUNTIME ON CACHE INTERNAL "")
 
 # Set-up header extensions, i.e. non-processable directly by compilation, rather, simply included into project tree
 set(ES_HEADER_EXTENSIONS 

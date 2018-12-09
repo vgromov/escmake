@@ -67,3 +67,10 @@ elseif(CMAKE_COMPILER_IS_GNUCXX)
   endif()
   
 endif()
+
+# Tune-up add_library behaviour
+set(BUILD_SHARED_LIBS ${ES_BUILD_SHARED_LIBS})
+message(
+  STATUS
+  "eslinker.defs BUILD_SHARED_LIBS=>${BUILD_SHARED_LIBS}"
+)
