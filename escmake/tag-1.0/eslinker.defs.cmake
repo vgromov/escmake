@@ -66,7 +66,7 @@ elseif(CMAKE_COMPILER_IS_GNUCXX)
     set(CMAKE_CXX_STANDARD_LIBRARIES "${CMAKE_CXX_STANDARD_LIBRARIES} -lmingw32")
   endif(MINGW)
   
-endif(CMAKE_COMPILER_IS_GNUCXX)
+endif()
 
 # Tune-up add_library behaviour
 set(BUILD_SHARED_LIBS ${ES_BUILD_SHARED_LIBS})
