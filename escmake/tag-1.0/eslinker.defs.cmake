@@ -31,7 +31,7 @@ if(MSVC)
       endif()
     endforeach()
 
-  else()
+  else(ES_USE_DYNAMIC_RUNTIME)
   
     message(
       STATUS
@@ -44,7 +44,7 @@ if(MSVC)
       endif()
     endforeach()
     
-  endif()
+  endif(ES_USE_DYNAMIC_RUNTIME)
   
 elseif(CMAKE_COMPILER_IS_GNUCXX)
 
@@ -55,18 +55,18 @@ elseif(CMAKE_COMPILER_IS_GNUCXX)
     )
   
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++")
-  else()
+  else(NOT ES_USE_DYNAMIC_RUNTIME)
     message(
       STATUS
       "GNUCXX -> Linking against libstdc++ runtime dynamically"
     )
-  endif()
+  endif(NOT ES_USE_DYNAMIC_RUNTIME)
   
   if(MINGW)
     set(CMAKE_CXX_STANDARD_LIBRARIES "${CMAKE_CXX_STANDARD_LIBRARIES} -lmingw32")
-  endif()
+  endif(MINGW)
   
-endif()
+endif(CMAKE_COMPILER_IS_GNUCXX)
 
 # Tune-up add_library behaviour
 set(BUILD_SHARED_LIBS ${ES_BUILD_SHARED_LIBS})
