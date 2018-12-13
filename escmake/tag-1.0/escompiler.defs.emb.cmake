@@ -1,7 +1,9 @@
 if(BORLAND AND EMBARCADERO)
 
   set(binarySuffix ecc)
-  set(compilerVersion ${CMAKE_CXX_COMPILER_VERSION})
+  if("${CMAKE_CXX_COMPILER_VERSION}" MATCHES "^([0-9]+)\\.([0-9]+)")
+    math(EXPR compilerVersion "${CMAKE_MATCH_1}*100 + ${CMAKE_MATCH_2}")  
+  endif()
   
   string(
     REPLACE "." "_"
