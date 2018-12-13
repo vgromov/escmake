@@ -54,18 +54,25 @@ elseif(CMAKE_COMPILER_IS_GNUCXX)
       "GNUCXX -> Linking against libstdc++ runtime statically"
     )
   
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++ -pthread")
   else(NOT ES_USE_DYNAMIC_RUNTIME)
     message(
       STATUS
       "GNUCXX -> Linking against libstdc++ runtime dynamically"
     )
+    
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
   endif(NOT ES_USE_DYNAMIC_RUNTIME)
   
   if(MINGW)
     set(CMAKE_CXX_STANDARD_LIBRARIES "${CMAKE_CXX_STANDARD_LIBRARIES} -lmingw32")
   endif(MINGW)
-  
+
+elseif(BORLAND AND EMBARCADERO)
+  if( ES_USE_DYNAMIC_RUNTIME )
+    # Delphi runtime, C++ runtime, Unicode
+    set_embt_target(DynamicRuntime DR Unicode)
+  endif()
 endif()
 
 # Tune-up add_library behaviour
