@@ -27,5 +27,6 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
   endif()
 
   set(ESCOMMON_COMPILER_VERSION ${compilerVersion})
-  set(ESCOMMON_BIN_SUFFIX ${binarySuffix})  
+  set(ESCOMMON_BIN_SUFFIX ${binarySuffix})
+  
 endif()

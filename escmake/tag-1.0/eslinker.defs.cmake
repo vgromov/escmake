@@ -72,6 +72,9 @@ elseif(BORLAND AND EMBARCADERO)
   if( ES_USE_DYNAMIC_RUNTIME )
     # Delphi runtime, C++ runtime, Unicode
     set_embt_target(DynamicRuntime DR Unicode)
+  else()
+    # Just Unicode
+    set_embt_target(Unicode)
   endif()
 endif()
 
