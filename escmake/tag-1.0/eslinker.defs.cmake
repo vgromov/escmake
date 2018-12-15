@@ -69,13 +69,19 @@ elseif(CMAKE_COMPILER_IS_GNUCXX)
   endif(MINGW)
 
 elseif(BORLAND AND EMBARCADERO)
+
   if( ES_USE_DYNAMIC_RUNTIME )
+  
     # Delphi runtime, C++ runtime, Unicode
     set_embt_target(DynamicRuntime DR Unicode)
+    
   else()
+    
     # Just Unicode
     set_embt_target(Unicode)
+    
   endif()
+  
 endif()
 
 # Tune-up add_library behaviour
