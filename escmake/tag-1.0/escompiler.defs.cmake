@@ -60,6 +60,7 @@ else()
       "Undefined C++ standard version: ${ESCOMMON_CONFIG_REQUIRED_CPP_STANDARD}"
     )
   endif()
+  
 endif()
 
 # Use UTF-8 source charset, to augment proper string literal encoding in GCC environment
