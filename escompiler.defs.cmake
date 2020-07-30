@@ -87,9 +87,12 @@ add_definitions(-DUNICODE -D_UNICODE)
 if(ES_BUILD_SHARED_LIBS)
   # For dynamic linkage to ekosf core libraries
   set(ES_USEDLL_PREPROC_FOR_EXE ES_USE_DLLS)
- 
+  set(ES_USEDLL_PREPROC_FOR_DYNLIB ES_USE_DLLS)
   if(MSVC)
     # For dynamic linkage to ekosf core libraries and proper dll interface generation
-    set(ES_USEDLL_PREPROC_FOR_DYNLIB ES_USE_DLLS _USRDLL)
+    list(APPEND
+      ES_USEDLL_PREPROC_FOR_DYNLIB 
+      _USRDLL
+    )
   endif()
 endif()
